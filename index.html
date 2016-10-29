@@ -1,0 +1,44 @@
+<html>
+<head>
+    <link rel="stylesheet" href="build/cadillac/styles.css" type="text/css" media="all" />
+    <script type="text/javascript" src="build/cadillac/bundle.js"></script>
+    <script>
+        function changeStyleSheet(folder) {
+            var styleSheet = "build/" + folder +"/styles.css";
+            var headHTML = document.getElementsByTagName('head')[0].innerHTML;
+            headHTML    += '<link type="text/css" rel="stylesheet" href=' + styleSheet + '>';
+            document.getElementsByTagName('head')[0].innerHTML = headHTML;
+        }
+    </script>
+</head>
+<body>
+<input type="button" onclick="changeStyleSheet('buick')" value="buick" />
+<input type="button" onclick="changeStyleSheet('cadillac')" value="cadillac" />
+<input type="button" onclick="changeStyleSheet('cheverolet')" value="cheverolet" />
+<input type="button" onclick="changeStyleSheet('gmc')" value="gmc" />
+<div class="container">
+    <div class="header">
+        <div class="brand">Brand</div>
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Vacation</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="hero">Hero</div>
+    <div class="tiles">
+        <ul>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+            <li>Four</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

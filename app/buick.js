@@ -1,0 +1,1 @@
+require('./styles/buick/app.scss');

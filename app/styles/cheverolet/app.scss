@@ -1,0 +1,48 @@
+$visual-grid: true;
+$visual-grid-color: #eee;
+
+@import 'bourbon';
+@import 'neat';
+@import 'neat-helpers';
+@import "colors";
+@import "fonts";
+
+
+$mobile: new-breakpoint(max-width 500px 4);
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $primary-font;
+  font-size: $primary-font-size;
+}
+
+.container {
+  @include outer-container();
+  .brand, .navigation {
+    @include span-columns(6);
+  }
+  .navigation, .tiles {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .navigation {
+    ul li {
+      display: inline-block;
+    }
+  }
+  .tiles {
+    ul li {
+      background-color: $primary;
+      @include span-columns(3);
+      height: 30%;
+      @include media($mobile) {
+        @include span-columns(12);
+        margin: 10px 0 10px 0;
+      }
+    }
+  }
+}
